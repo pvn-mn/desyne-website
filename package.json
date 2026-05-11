@@ -1,0 +1,31 @@
+{
+  "name": "custom-theme",
+  "version": "1.0.0",
+  "description": "pending completion",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "vite build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pvn-mn/desyne-website.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/pvn-mn/desyne-website/issues"
+  },
+  "homepage": "https://github.com/pvn-mn/desyne-website#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.5.0",
+    "postcss": "^8.5.14",
+    "tailwindcss": "^3.4.19",
+    "vite": "^8.0.12"
+  },
+  "dependencies": {
+    "alpinejs": "^3.15.12"
+  }
+}
