@@ -23,9 +23,28 @@ UpdraftPlus
 Wordfence
 
 
-## ACF Field Groups
+<br><br>
+## Task ID - P1-13 to P1-15
+
+### ACF Field Groups
 
 ACF field groups are managed through WP Admin and version-controlled using Local JSON.
 
 ### JSON path:
 /acf-json/
+
+
+### Custom Post Types
+
+Registered in Field Groups:
+
+- Testimonials
+- FAQs
+- Features
+
+Deferred pending confirmed project requirements:
+
+- Tutorials
+- Job Listings
+
+- Blog Posts - Native WordPress Posts will be used for Blog content.
