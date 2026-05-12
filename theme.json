@@ -1,0 +1,10 @@
+{
+    "version": 2,
+    "settings": {
+        "appearanceTools": true,
+        "layout": {
+            "contentSize": "768px",
+            "wideSize": "1280px"
+        }
+    }
+}

@@ -8,7 +8,13 @@ module.exports = {
     './assets/src/js/**/*.js'
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        brand: {
+          DEFAULT: '#000000',    //ui pending
+        }
+      },
+    },
   },
   plugins: [],
 }
