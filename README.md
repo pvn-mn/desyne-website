@@ -48,3 +48,11 @@ Deferred pending confirmed project requirements:
 - Job Listings
 
 - Blog Posts - Native WordPress Posts will be used for Blog content.
+
+
+
+<br><br>
+
+## Package.json:
+view package.json for further details on project configuration & dependedncy management.
+

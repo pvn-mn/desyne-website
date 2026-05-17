@@ -26,12 +26,11 @@ function desyne_enqueue_assets() {
         filemtime($theme_dir . '/assets/dist/style.css')
     );
 
-    wp_enqueue_script(
+    wp_enqueue_script_module(
         'desyne-main',
         $theme_uri . '/assets/dist/main.js',
         [],
-        filemtime($theme_dir . '/assets/dist/main.js'),
-        true
+        filemtime($theme_dir . '/assets/dist/main.js')
     );
 }
 add_action('wp_enqueue_scripts', 'desyne_enqueue_assets');

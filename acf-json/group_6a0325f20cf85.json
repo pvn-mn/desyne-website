@@ -26,7 +26,7 @@
         {
             "key": "field_6a03262aeae5b",
             "label": "Hero Heading",
-            "name": "hero_",
+            "name": "hero_heading",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -191,5 +191,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1778592290
+    "modified": 1779010074
 }
