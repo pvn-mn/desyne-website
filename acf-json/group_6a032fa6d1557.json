@@ -37,24 +37,6 @@
             "default_value": "",
             "allow_in_bindings": 0,
             "placeholder": ""
-        },
-        {
-            "key": "field_6a03305ce9040",
-            "label": "Facebook URL",
-            "name": "facebook_url",
-            "aria-label": "",
-            "type": "url",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "allow_in_bindings": 0,
-            "placeholder": ""
         }
     ],
     "location": [
@@ -78,5 +60,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1778593960
+    "modified": 1779104654
 }

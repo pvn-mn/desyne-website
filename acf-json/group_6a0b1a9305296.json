@@ -1,11 +1,11 @@
 {
-    "key": "group_6a03437d73665",
-    "title": "Testimonial Details",
+    "key": "group_6a0b1a9305296",
+    "title": "Download CTA Details",
     "fields": [
         {
-            "key": "field_6a03437d21fe2",
-            "label": "Person Name",
-            "name": "person_name",
+            "key": "field_6a0b1a93b6782",
+            "label": "Download Heading",
+            "name": "download_heading",
             "aria-label": "",
             "type": "text",
             "instructions": "",
@@ -24,11 +24,11 @@
             "append": ""
         },
         {
-            "key": "field_6a0b29e5cb074",
-            "label": "Person Role",
-            "name": "person_role",
+            "key": "field_6a0b1aeab6783",
+            "label": "Download Subheading",
+            "name": "download_subheading",
             "aria-label": "",
-            "type": "text",
+            "type": "textarea",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -40,14 +40,50 @@
             "default_value": "",
             "maxlength": "",
             "allow_in_bindings": 0,
+            "rows": "",
             "placeholder": "",
-            "prepend": "",
-            "append": ""
+            "new_lines": ""
         },
         {
-            "key": "field_6a03445a21fe7",
-            "label": "Photo",
-            "name": "photo",
+            "key": "field_6a0b1afbb6784",
+            "label": "App Store URL",
+            "name": "app_store_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6a0b1b11b6785",
+            "label": "Play Store URL",
+            "name": "play_store_url",
+            "aria-label": "",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "allow_in_bindings": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_6a0b1b8ab6786",
+            "label": "Phone Mockup Image",
+            "name": "phone_mockup_image",
             "aria-label": "",
             "type": "image",
             "instructions": "",
@@ -69,73 +105,6 @@
             "mime_types": "",
             "allow_in_bindings": 0,
             "preview_size": "medium"
-        },
-        {
-            "key": "field_6a03443a21fe6",
-            "label": "Rating",
-            "name": "rating",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
-        },
-        {
-            "key": "field_6a03441921fe5",
-            "label": "Testimonial Text",
-            "name": "testimonial_text",
-            "aria-label": "",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "maxlength": "",
-            "allow_in_bindings": 0,
-            "rows": "",
-            "placeholder": "",
-            "new_lines": ""
-        },
-        {
-            "key": "field_6a1329fae5c2a",
-            "label": "Display order",
-            "name": "display_order",
-            "aria-label": "",
-            "type": "number",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "min": "",
-            "max": "",
-            "allow_in_bindings": 0,
-            "placeholder": "",
-            "step": "",
-            "prepend": "",
-            "append": ""
         }
     ],
     "location": [
@@ -143,7 +112,7 @@
             {
                 "param": "post_type",
                 "operator": "==",
-                "value": "testimonial"
+                "value": "download_cta"
             }
         ]
     ],
@@ -159,5 +128,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1779640877
+    "modified": 1779160416
 }

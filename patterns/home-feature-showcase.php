@@ -1,0 +1,96 @@
+<!-- features CPT -->
+
+
+
+<?php
+/**
+ * Title: Home Feature Showcase
+ * Slug: custom-theme/home-feature-showcase
+ * Categories: desyne
+ */
+
+$features = new WP_Query([
+  'post_type'      => 'feature',
+  'post_status'    => 'publish',
+  'posts_per_page' => 3,
+  'meta_key'       => 'display_order',
+  'orderby'        => 'meta_value_num',
+  'order'          => 'ASC',
+]);
+?>
+
+<section class="bg-white py-20 md:py-28">
+  <div class="mx-auto max-w-7xl px-6">
+    <?php if ($features->have_posts()) : ?>
+      <div class="space-y-24 md:space-y-32">
+        <?php
+        $index = 0;
+
+        while ($features->have_posts()) :
+          $features->the_post();
+
+          $title = get_field('feature_title');
+          $description = get_field('feature_description');
+          $button_text = get_field('button_text');
+          $button_url = get_field('button_url');
+          $image = get_field('feature_icon');
+          $button_color = get_field('button_color') ?: '#5d946f';
+
+          $is_reversed = $index % 2 !== 0;
+        ?>
+
+          <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
+            <div class="<?php echo $is_reversed ? 'lg:order-2' : 'lg:order-1'; ?>">
+              <div class="relative h-[240px] overflow-hidden rounded-3xl bg-neutral-100 shadow-sm md:h-[360px]">
+                <?php if ($image) : ?>
+                  <img
+                    src="<?php echo esc_url($image['url']); ?>"
+                    alt="<?php echo esc_attr($title ?: get_the_title()); ?>"
+                    class="h-full w-full object-cover"
+                  >
+                <?php else : ?>
+                  <div class="flex h-full min-h-[320px] items-center justify-center p-8 text-center text-lg font-bold text-neutral-400 md:min-h-[440px]">
+                    <?php echo esc_html($title ?: get_the_title()); ?>
+                  </div>
+                <?php endif; ?>
+              </div>
+            </div>
+
+            <div class="<?php echo $is_reversed ? 'lg:order-1' : 'lg:order-2'; ?>">
+              <div class="max-w-xl">
+                <h2 class="text-3xl font-black leading-tight tracking-tight text-black md:text-4xl">
+                  <?php echo esc_html($title ?: get_the_title()); ?>
+                </h2>
+
+                <?php if ($description) : ?>
+                  <p class="mt-5 text-base leading-7 text-neutral-600 md:text-lg">
+                    <?php echo esc_html($description); ?>
+                  </p>
+                <?php endif; ?>
+
+                <?php if ($button_text) : ?>
+                  <a
+                    href="<?php echo esc_url($button_url ?: '#'); ?>"
+                    class="mt-8 inline-flex rounded-md px-7 py-3 text-sm font-bold text-white"
+                    style="background-color: <?php echo esc_attr($button_color); ?>;"
+                  >
+                    <?php echo esc_html($button_text); ?>
+                  </a>
+                <?php endif; ?>
+              </div>
+            </div>
+          </div>
+
+        <?php
+          $index++;
+        endwhile;
+        wp_reset_postdata();
+        ?>
+      </div>
+    <?php else : ?>
+      <div class="rounded-2xl bg-neutral-100 p-10 text-center text-neutral-500">
+        Add Feature entries in WordPress admin to display this section.
+      </div>
+    <?php endif; ?>
+  </div>
+</section>
