@@ -1,16 +1,69 @@
+<!-- wp:html -->
 
-<!-- wp:group {"tagName":"header","className":"site-header sticky top-50 z-50 bg-white","layout":{"type":"constrained"}} -->
-<header class="wp-block-group site-header sticky top-0 z-50 bg-white">
+<!-- fixed header instead of sticky because wordpress 
+ default parent wrapper has 'overflow-hidden'  -->
+<header class="fixed top-0 left-0 right-0 z-[10000] bg-white shadow-md wp-custom-fixed-header" 
+x-data="{ open: false }">
 
-    <!-- wp:group {"className":"site-header__inner mx-auto flex max-w-7xl items-center justify-between px-4 py-4","layout":{"type":"flex","justifyContent":"space-between"}} -->
-    <div class="wp-block-group site-header__inner mx-auto flex max-w-7xl items-center justify-between px-4 py-4">
+  <div class="mx-auto max-w-7xl px-6 py-5 md:px-10 lg:px-20">
+    <div class="flex items-center justify-between">
+      <a href="/" class="shrink-0 text-2xl font-black tracking-tight text-black">
+        Desyne
+      </a>
 
-        <!-- wp:site-title {"className":"font-bold"} /-->
+      <nav class="hidden flex-1 items-center justify-center gap-7 text-sm font-semibold text-neutral-700 lg:flex">
+        <a href="/features">Features</a>
+        <a href="/templates">Templates</a>
+        <a href="/tutorials">Tutorials</a>
+        <a href="/careers">Careers</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+      </nav>
 
+      <div class="hidden shrink-0 items-center gap-5 lg:flex">
+        <a href="/login" class="text-sm font-semibold text-black">Log in</a>
+        <a href="#" class="rounded-md bg-[#ccefeb] px-5 py-3 text-sm font-bold text-black">
+          Start Creating
+        </a>
+      </div>
 
-        <!-- wp:template-part {"slug":"nav"} /-->
+      <button
+        type="button"
+        class="lg:hidden text-3xl leading-none text-black"
+        aria-label="Toggle menu"
+        @click="open = !open"
+      >
+        <span x-show="!open">☰</span>
+        <span x-show="open">×</span>
+      </button>
     </div>
-    <!-- /wp:group -->
 
+    <div
+      x-show="open"
+      x-transition
+      class="lg:hidden"
+    >
+      <nav class="mt-6 rounded-2xl bg-neutral-100 p-5">
+        <div class="grid gap-4 text-sm font-semibold text-neutral-700">
+          <a href="/features">Features</a>
+          <a href="/templates">Templates</a>
+          <a href="/tutorials">Tutorials</a>
+          <a href="/careers">Careers</a>
+          <a href="/about">About</a>
+          <a href="/blog">Blog</a>
+        </div>
+
+        <div class="mt-5 border-t border-black/10 pt-5">
+          <a href="/login" class="block text-sm font-semibold text-black">
+            Log in
+          </a>
+
+          <a href="#" class="mt-4 inline-flex rounded-md bg-[#ccefeb] px-5 py-3 text-sm font-bold text-black">
+            Start Creating
+          </a>
+        </div>
+      </nav>
+    </div>
+  </div>
 </header>
-<!-- /wp:group -->
+<!-- /wp:html -->
