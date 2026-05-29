@@ -63,4 +63,18 @@ add_action('init', function () {
     'menu_icon' => 'dashicons-admin-tools',
     'rewrite' => ['slug' => 'tools'],
 ]);
+
+    // wordpress taxonomy - to share ACF 'feature details' with home and feature page:
+    register_taxonomy('feature_location', ['feature'], [
+    'labels' => [
+        'name'          => __('Feature Locations', 'custom-theme'),
+        'singular_name' => __('Feature Location', 'custom-theme'),
+    ],
+    'public'            => true,
+    'hierarchical'      => true,
+    'show_admin_column' => true,
+    'show_in_rest'      => true,
+    'rewrite'           => ['slug' => 'feature-location'],
+]);
+
 });

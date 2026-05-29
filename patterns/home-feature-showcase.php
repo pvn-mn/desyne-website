@@ -16,6 +16,13 @@ $features = new WP_Query([
   'meta_key'       => 'display_order',
   'orderby'        => 'meta_value_num',
   'order'          => 'ASC',
+  'tax_query'      => [
+      [
+          'taxonomy' => 'feature_location',
+          'field'    => 'slug',
+          'terms'    => 'home-page',
+      ],
+  ],
 ]);
 ?>
 
