@@ -33,7 +33,7 @@ if ($download_cta->have_posts()) {
 }
 ?>
 
-<section class="overflow-hidden bg-[#dcefed] py-14 md:py-20">
+<section class="overflow-hidden bg-[#dcefed] py-14 md:py-22">
   <div class="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 md:px-12 lg:grid-cols-2 lg:px-20">
     
     <div>
@@ -41,11 +41,11 @@ if ($download_cta->have_posts()) {
         <?php echo esc_html($heading ?: 'Personalise a professional design in minutes.'); ?>
       </h2>
 
-      <p class="mt-6 max-w-md text-base leading-7 text-neutral-700 md:text-lg">
+      <p class="mt-4 max-w-md text-base leading-7 text-neutral-700 md:text-lg">
         <?php echo esc_html($subheading ?: 'Access templates, graphics, photos, and editing tools from your phone whenever inspiration strikes.'); ?>
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-4">
+      <div class="mt-6 flex flex-wrap gap-4">
         <a
           href="<?php echo esc_url($play_store_url); ?>"
           class="inline-flex items-center rounded-md bg-black px-5 py-3 text-sm font-bold text-white"
@@ -62,25 +62,25 @@ if ($download_cta->have_posts()) {
       </div>
     </div>
 
-    <div class="relative min-h-[360px] md:min-h-[480px]">
+    <div class="relative h-[320px] md:h-[420px]">
       <?php if ($phone_image) : ?>
 
         <img
         src="<?php echo esc_url($phone_image['url']); ?>"
         alt="<?php echo esc_attr($heading ?: 'Mobile app preview'); ?>"
-        class="absolute left-1/3 top-10 z-10 h-[320px] -translate-x-[65%] rounded-[2rem] object-contain md:h-[440px]"
+        class="absolute left-1/3 top-6 z-10 h-[340px] -translate-x-[65%] rounded-[2.5rem] object-contain md:h-[460px]"
         >
 
         <img
         src="<?php echo esc_url($phone_image['url']); ?>"
         alt=""
         aria-hidden="true"
-        class="absolute left-1/3 top-20 z-0 h-[300px] -translate-x-[15%] rotate-[30deg] rounded-[2rem] object-contain opacity-90 md:h-[400px]"
+        class="absolute left-1/3 top-[72px] z-0 h-[310px] -translate-x-[15%] rotate-[30deg] rounded-[2.5rem] object-contain opacity-90 md:h-[410px]"
         >
         
       <?php else : ?>
-        <div class="absolute left-1/2 top-10 z-10 h-[320px] w-[170px] -translate-x-[35%] rounded-[2rem] bg-white shadow-xl md:h-[440px] md:w-[230px]"></div>
-        <div class="absolute left-1/2 top-16 z-0 h-[300px] w-[160px] -translate-x-[5%] rotate-[-12deg] rounded-[2rem] bg-white/70 shadow-xl md:h-[420px] md:w-[220px]"></div>
+        <div class="absolute left-1/2 top-6 z-10 h-[340px] w-[180px] -translate-x-[35%] rounded-[2.5rem] bg-white shadow-xl md:h-[460px] md:w-[245px]"></div>
+        <div class="absolute left-1/2 top-[60px] z-0 h-[315px] w-[165px] -translate-x-[5%] rotate-[-12deg] rounded-[2.5rem] bg-white/70 shadow-xl md:h-[430px] md:w-[230px]"></div>
       <?php endif; ?>
     </div>    
   </div>

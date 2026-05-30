@@ -77,4 +77,46 @@ add_action('init', function () {
     'rewrite'           => ['slug' => 'feature-location'],
 ]);
 
+
+    /**
+     * Templates CPT + Taxonomies
+     */
+
+    register_post_type('desyne_template', [
+        'labels' => [
+            'name' => 'Templates',
+            'singular_name' => 'Template',
+            'add_new_item' => 'Add New Template',
+            'edit_item' => 'Edit Template',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-layout',
+        'supports' => ['title', 'thumbnail', 'excerpt'],
+        'has_archive' => false,
+        'rewrite' => ['slug' => 'templates'],
+    ]);
+
+    register_taxonomy('template_type', ['desyne_template'], [
+        'labels' => [
+            'name' => 'Template Types',
+            'singular_name' => 'Template Type',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => true,
+        'rewrite' => ['slug' => 'template-type'],
+    ]);
+
+    register_taxonomy('template_tag', ['desyne_template'], [
+        'labels' => [
+            'name' => 'Template Tags',
+            'singular_name' => 'Template Tag',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => false,
+        'rewrite' => ['slug' => 'template-tag'],
+    ]);
+
 });
