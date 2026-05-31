@@ -119,4 +119,35 @@ add_action('init', function () {
         'rewrite' => ['slug' => 'template-tag'],
     ]);
 
+    /**
+     * Tutorials CPT + Taxonomy
+     */
+
+    register_post_type('tutorial', [
+        'labels' => [
+            'name' => 'Tutorials',
+            'singular_name' => 'Tutorial',
+            'add_new_item' => 'Add New Tutorial',
+            'edit_item' => 'Edit Tutorial',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'menu_icon' => 'dashicons-video-alt3',
+        'supports' => ['title', 'thumbnail', 'excerpt'],
+        'has_archive' => false,
+        'rewrite' => ['slug' => 'tutorials'],
+    ]);
+
+    register_taxonomy('tutorial_category', ['tutorial'], [
+        'labels' => [
+            'name' => 'Tutorial Categories',
+            'singular_name' => 'Tutorial Category',
+        ],
+        'public' => true,
+        'show_in_rest' => true,
+        'hierarchical' => true,
+        'show_admin_column' => true,
+        'rewrite' => ['slug' => 'tutorial-category'],
+    ]);
+
 });
