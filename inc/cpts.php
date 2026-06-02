@@ -150,4 +150,32 @@ add_action('init', function () {
         'rewrite' => ['slug' => 'tutorial-category'],
     ]);
 
+    
+    /**
+     * About Us CPT
+     */
+
+    register_post_type('about_stat', [
+        'label' => 'About Stats',
+        'public' => true,
+        'show_in_rest' => true,
+        'supports' => ['title'],
+        'menu_icon' => 'dashicons-chart-bar',
+        'rewrite' => ['slug' => 'about-stat'],
+    ]);
+
+    // wordpress taxonomy - to share ACF 'testimonial details' with home and about us page:
+    register_taxonomy('testimonial_location', ['testimonial'], [
+        'labels' => [
+            'name' => __('Testimonial Locations', 'custom-theme'),
+            'singular_name' => __('Testimonial Location', 'custom-theme'),
+        ],
+        'public' => true,
+        'hierarchical' => true,
+        'show_admin_column' => true,
+        'show_in_rest' => true,
+        'rewrite' => ['slug' => 'testimonial-location'],
+    ]);
+
+
 });
