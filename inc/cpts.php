@@ -133,8 +133,7 @@ add_action('init', function () {
         'public' => true,
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-video-alt3',
-        'supports' => ['title', 'thumbnail', 'excerpt'],
-        'has_archive' => false,
+        'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],        'has_archive' => false,
         'rewrite' => ['slug' => 'tutorials'],
     ]);
 
