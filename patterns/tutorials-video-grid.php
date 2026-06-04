@@ -34,12 +34,12 @@ $tutorials = new WP_Query([
 					$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
 					$terms = get_the_terms(get_the_ID(), 'tutorial_category');
 					$category_name = $terms && !is_wp_error($terms) ? $terms[0]->name : 'Tutorial';
-					$link = $youtube_url ?: get_permalink();
+					$link = get_permalink();
 					?>
 
 					<article class="overflow-hidden rounded-[28px] border border-neutral-200 bg-white">
 
-						<a href="<?php echo esc_url($link); ?>" target="_blank" rel="noopener" class="block group">
+						<a href="<?php echo esc_url($link); ?>" class="block group">
 
 							<div class="relative aspect-video overflow-hidden bg-neutral-100">
 
