@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Blog Bottom CTA
- * Slug: desyne/blog-bottom-cta
+ * Slug: custom-theme/blog-bottom-cta
  * Categories: desyne
  */
 ?>

@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Blog Grid
- * Slug: desyne/blog-grid
+ * Slug: custom-theme/blog-grid
  * Categories: desyne
  */
 

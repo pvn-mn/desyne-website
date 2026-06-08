@@ -1,7 +1,7 @@
 <?php
 /**
  * Title: Blog Hero
- * Slug: desyne/blog-hero
+ * Slug: custom-theme/blog-hero
  * Categories: desyne
  */
 ?>
