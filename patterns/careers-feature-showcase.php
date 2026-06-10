@@ -2,7 +2,7 @@
 /**
  * Title: Careers Feature Showcase
  * Slug: custom-theme/careers-feature-showcase
- * Categories: custom-theme
+ * Categories: desyne
  */
 
 $features = new WP_Query([

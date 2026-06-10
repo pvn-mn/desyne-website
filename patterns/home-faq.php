@@ -11,6 +11,13 @@ $faqs = new WP_Query([
   'post_type'      => 'faq',
   'post_status'    => 'publish',
   'posts_per_page' => 5,
+  'tax_query'      => [
+    [
+      'taxonomy' => 'faq_location',
+      'field'    => 'slug',
+      'terms'    => ['home-page'],
+    ],
+  ],
   'meta_key'       => 'display_order',
   'orderby'        => 'meta_value_num',
   'order'          => 'ASC',

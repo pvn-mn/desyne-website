@@ -177,4 +177,20 @@ add_action('init', function () {
     ]);
 
 
+    // wordpress taxonomy - to share ACF 'faq details' with faq page & etc..
+    register_taxonomy('faq_location', ['faq'], [
+    'labels' => [
+        'name'          => __('FAQ Locations', 'custom-theme'),
+        'singular_name' => __('FAQ Location', 'custom-theme'),
+        'add_new_item'  => __('Add FAQ Location', 'custom-theme'),
+    ],
+    'public'            => true,
+    'hierarchical'      => true,
+    'show_ui'           => true,
+    'show_admin_column' => true,
+    'show_in_rest'      => true,
+    'rewrite'           => ['slug' => 'faq-location'],
+    ]);
+
+
 });

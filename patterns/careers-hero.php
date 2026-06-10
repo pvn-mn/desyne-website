@@ -2,7 +2,7 @@
 /**
  * Title: Careers Hero
  * Slug: custom-theme/careers-hero
- * Categories: custom-theme
+ * Categories: desyne
  */
 
 $page_id = get_queried_object_id();
