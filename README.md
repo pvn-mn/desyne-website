@@ -1,3 +1,8 @@
+## Documentation
+
+- Content Editor Guide: `docs/content-editor-guide.md`
+
+
 
 ## Figma UI: 
 pending completion
