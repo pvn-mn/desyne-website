@@ -60,3 +60,12 @@ add_action('wp_enqueue_scripts', 'desyne_enqueue_assets');
 //     echo 'queried object ID: ' . esc_html(get_queried_object_id()) . "\n";
 //     echo '</pre>';
 // });
+
+
+
+
+add_action('init', function () {
+    register_block_pattern_category('desyne', [
+        'label' => __('Desyne', 'custom-theme'),
+    ]);
+});
