@@ -11,3 +11,19 @@ add_action('admin_menu', function () {
     remove_menu_page('tools.php');
     remove_menu_page('edit-comments.php');
 }, 999);
+
+
+
+//misc task - decluttering (parent menu)
+
+add_action('admin_menu', function () {
+    add_menu_page(
+        'Desyne Content',
+        'Desyne',
+        'edit_posts',
+        'desyne-content',
+        '',
+        'dashicons-layout',
+        25
+    );
+});

@@ -4,6 +4,7 @@ add_action('init', function () {
     register_post_type('testimonial', [
         'label' => 'Testimonials',
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'supports' => ['title'],
         'menu_icon' => 'dashicons-format-quote',
@@ -13,6 +14,7 @@ add_action('init', function () {
     register_post_type('faq', [
         'label' => 'FAQs',
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'supports' => ['title'],
         'menu_icon' => 'dashicons-editor-help',
@@ -22,6 +24,7 @@ add_action('init', function () {
     register_post_type('feature', [
         'label' => 'Features',
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'supports' => ['title'],
         'menu_icon' => 'dashicons-star-filled',
@@ -31,6 +34,7 @@ add_action('init', function () {
     register_post_type('screenshot_carousel', [
         'label' => 'Screenshot Carousel',
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'supports' => ['title', 'thumbnail'],
         'menu_icon' => 'dashicons-images-alt2',
@@ -40,6 +44,7 @@ add_action('init', function () {
     register_post_type('download_cta', [
         'label' => 'Download_CTA',
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'supports' => ['title', 'thumbnail'],
         'menu_icon' => 'dashicons-download',
@@ -58,6 +63,7 @@ add_action('init', function () {
     register_post_type('tool', [
     'label' => 'Tools',
     'public' => true,
+    'show_in_menu' => 'desyne-content',
     'show_in_rest' => true,
     'supports' => ['title', 'thumbnail'],
     'menu_icon' => 'dashicons-admin-tools',
@@ -90,6 +96,7 @@ add_action('init', function () {
             'edit_item' => 'Edit Template',
         ],
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-layout',
         'supports' => ['title', 'thumbnail', 'excerpt'],
@@ -131,6 +138,7 @@ add_action('init', function () {
             'edit_item' => 'Edit Tutorial',
         ],
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'menu_icon' => 'dashicons-video-alt3',
         'supports' => ['title', 'editor', 'thumbnail', 'excerpt'],        'has_archive' => false,
@@ -143,6 +151,7 @@ add_action('init', function () {
             'singular_name' => 'Tutorial Category',
         ],
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'hierarchical' => true,
         'show_admin_column' => true,
@@ -157,6 +166,7 @@ add_action('init', function () {
     register_post_type('about_stat', [
         'label' => 'About Stats',
         'public' => true,
+        'show_in_menu' => 'desyne-content',
         'show_in_rest' => true,
         'supports' => ['title'],
         'menu_icon' => 'dashicons-chart-bar',
