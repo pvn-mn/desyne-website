@@ -20,7 +20,7 @@ $template_query = new WP_Query([
     'post_status' => 'publish',
     'posts_per_page' => 24,
     'orderby' => 'date',
-    'order' => 'DESC',
+    'order' => 'ASC',
 ]);
 
 $total_templates = wp_count_posts('desyne_template')->publish ?? 0;
@@ -98,32 +98,48 @@ $total_templates = wp_count_posts('desyne_template')->publish ?? 0;
                 </div>
             </div>
 
-            <div class="mb-8 flex gap-3 overflow-x-auto pb-2">
-                <button
-                    type="button"
-                    class="shrink-0 rounded-full px-5 py-2 text-xs font-semibold transition"
-                    x-bind:class="$store.templates.tag === 'all' ? 'bg-green-600 text-white' : 'bg-slate-100 text-slate-800 hover:bg-slate-200'"
-                    x-on:click="$store.templates.tag = 'all'"
-                >
-                    All
-                </button>
+            
+<!-- tempplate tag & scroll -->
 
-                <?php if (!empty($tags) && !is_wp_error($tags)) : ?>
-                    <?php foreach ($tags as $tag) : ?>
-                        <button
-                            type="button"
-                            class="shrink-0 rounded-full px-5 py-2 text-xs font-semibold transition"
-                            x-bind:class="$store.templates.tag === '<?php echo esc_js($tag->slug); ?>' ? 'bg-green-600 text-white' : 'bg-slate-100 text-slate-800 hover:bg-slate-200'"
-                            x-on:click="$store.templates.tag = '<?php echo esc_js($tag->slug); ?>'"
-                        >
-                            <?php echo esc_html($tag->name); ?>
-                        </button>
-                    <?php endforeach; ?>
-                <?php endif; ?>
-            </div>
+<div class="relative mb-8">
+    <div
+        x-ref="tagScroller"
+        class="flex gap-3 overflow-x-auto scroll-smooth pr-12 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+    >
+        <button
+            type="button"
+            class="shrink-0 rounded-full px-5 py-2 text-xs font-semibold transition"
+            x-bind:class="$store.templates.tag === 'all' ? 'bg-green-600 text-white' : 'bg-slate-100 text-slate-800 hover:bg-slate-200'"
+            x-on:click="$store.templates.tag = 'all'"
+        >
+            All
+        </button>
 
+        <?php foreach ($tags as $tag) : ?>
+            <button
+                type="button"
+                class="shrink-0 rounded-full px-5 py-2 text-xs font-semibold transition"
+                x-bind:class="$store.templates.tag === '<?php echo esc_js($tag->slug); ?>' ? 'bg-green-600 text-white' : 'bg-slate-100 text-slate-800 hover:bg-slate-200'"
+                x-on:click="$store.templates.tag = '<?php echo esc_js($tag->slug); ?>'"
+            >
+                <?php echo esc_html($tag->name); ?>
+            </button>
+        <?php endforeach; ?>
+    </div>
+
+    <button
+        type="button"
+        class="absolute right-0 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full border border-slate-300 bg-white text-lg shadow-sm"
+        x-on:click="$refs.tagScroller.scrollBy({ left: 260, behavior: 'smooth' })"
+    >
+        →
+    </button>
+</div>
+
+
+<!-- Template Grid -->
             <?php if ($template_query->have_posts()) : ?>
-                <div class="grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6">
+                <div class="grid grid-cols-2 gap-x-6 gap-y-9 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7">
                     <?php while ($template_query->have_posts()) : $template_query->the_post(); ?>
                         <?php
                         $post_id = get_the_ID();

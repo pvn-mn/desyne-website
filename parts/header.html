@@ -2,16 +2,17 @@
 
 <!-- fixed header instead of sticky because wordpress 
  default parent wrapper has 'overflow-hidden'  -->
-<header class="fixed top-0 left-0 right-0 z-[10000] bg-white shadow-md wp-custom-fixed-header" 
-x-data="{ open: false }">
+<header class="fixed top-0 left-0 right-0 z-[10000] bg-white wp-custom-fixed-header"
+    x-data="{ open: false }">
 
-  <div class="mx-auto max-w-7xl px-6 py-5 md:px-10 lg:px-20">
+  <div class="mx-auto max-w-6xl px-8 py-5 md:px-12 lg:px-24">
+    
     <div class="flex items-center justify-between">
       <a href="/" class="shrink-0 text-2xl font-black tracking-tight text-black">
         Desyne
       </a>
 
-      <nav class="hidden flex-1 items-center justify-center gap-7 text-sm font-semibold text-neutral-700 lg:flex">
+      <nav class="hidden flex-1 items-center justify-center gap-7 text-[13px] font-semibold text-neutral-700 lg:flex">
         <a href="/features">Features</a>
         <a href="/templates">Templates</a>
         <a href="/tutorials">Tutorials</a>
@@ -21,15 +22,18 @@ x-data="{ open: false }">
       </nav>
 
       <div class="hidden shrink-0 items-center gap-5 lg:flex">
-        <a href="/login" class="text-sm font-semibold text-black">Log in</a>
-        <a href="#" class="rounded-md bg-[#ccefeb] px-5 py-3 text-sm font-bold text-black">
+        <a href="/login" class="text-[13px] font-semibold text-black">
+          Log in
+        </a>
+
+        <a href="#" class="rounded-md bg-[#ccefeb] px-5 py-3 text-[13px] font-bold text-black">
           Start Creating
         </a>
       </div>
 
       <button
         type="button"
-        class="lg:hidden text-3xl leading-none text-black"
+        class="text-3xl leading-none text-black lg:hidden"
         aria-label="Toggle menu"
         @click="open = !open"
       >
@@ -44,7 +48,7 @@ x-data="{ open: false }">
       class="lg:hidden"
     >
       <nav class="mt-6 rounded-2xl bg-neutral-100 p-5">
-        <div class="grid gap-4 text-sm font-semibold text-neutral-700">
+        <div class="grid gap-4 text-[13px] font-semibold text-neutral-700">
           <a href="/features">Features</a>
           <a href="/templates">Templates</a>
           <a href="/tutorials">Tutorials</a>
@@ -54,16 +58,17 @@ x-data="{ open: false }">
         </div>
 
         <div class="mt-5 border-t border-black/10 pt-5">
-          <a href="/login" class="block text-sm font-semibold text-black">
+          <a href="/login" class="block text-[13px] font-semibold text-black">
             Log in
           </a>
 
-          <a href="#" class="mt-4 inline-flex rounded-md bg-[#ccefeb] px-5 py-3 text-sm font-bold text-black">
+          <a href="#" class="mt-4 inline-flex rounded-md bg-[#ccefeb] px-5 py-3 text-[13px] font-bold text-black">
             Start Creating
           </a>
         </div>
       </nav>
     </div>
+
   </div>
 </header>
 <!-- /wp:html -->

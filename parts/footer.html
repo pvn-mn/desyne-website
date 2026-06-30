@@ -1,20 +1,29 @@
 <!-- wp:html -->
-<footer class="bg-neutral-100">
+<footer class="bg-neutral-100 font-poppins">
   <div class="mx-auto max-w-7xl px-6 py-14 md:px-10 lg:px-20 lg:py-16">
 
     <!-- Mobile / Tablet Footer -->
     <div class="lg:hidden">
-      <a href="/" class="mb-8 block text-2xl font-black text-black">Desyne</a>
+      <a href="/" class="mb-8 flex items-center gap-3">
+        <img
+          src="/wp-content/themes/custom-theme/assets/images/Desyne-logo.png"
+          alt="Desyne"
+          class="h-10 w-10 rounded-xl object-contain"
+        >
+        <span class="text-2xl font-black text-black">Desyne</span>
+      </a>
 
       <div class="grid gap-4">
         <details class="border-b border-black/10 pb-4">
           <summary class="flex cursor-pointer list-none items-center justify-between text-sm font-bold text-black">
             Products <span>⌄</span>
           </summary>
-          <div class="mt-4 space-y-3 text-sm text-neutral-600">
+          <div class="mt-4 space-y-3 text-[14px] text-[#444444]">
             <a class="block" href="#">Photo Editor</a>
             <a class="block" href="#">Collage Maker</a>
             <a class="block" href="#">Graphic Designer</a>
+            <a class="block" href="#">Pricing</a>
+            <a class="block" href="#">Desyne Mobile</a>
           </div>
         </details>
 
@@ -22,10 +31,13 @@
           <summary class="flex cursor-pointer list-none items-center justify-between text-sm font-bold text-black">
             Features <span>⌄</span>
           </summary>
-          <div class="mt-4 space-y-3 text-sm text-neutral-600">
-            <a class="block" href="#">Templates</a>
-            <a class="block" href="#">Background Remover</a>
-            <a class="block" href="#">Brand Kit</a>
+          <div class="mt-4 space-y-3 text-[14px] text-[#444444]">
+            <a class="block" href="#">Photo Effects</a>
+            <a class="block" href="#">Touch Up</a>
+            <a class="block" href="#">Photo to Art</a>
+            <a class="block" href="#">BG Remover</a>
+            <a class="block" href="#">Essential Features</a>
+            <a class="block" href="#">More</a>
           </div>
         </details>
 
@@ -33,10 +45,14 @@
           <summary class="flex cursor-pointer list-none items-center justify-between text-sm font-bold text-black">
             Resources <span>⌄</span>
           </summary>
-          <div class="mt-4 space-y-3 text-sm text-neutral-600">
-            <a class="block" href="#">Tutorials</a>
+          <div class="mt-4 space-y-3 text-[14px] text-[#444444]">
+            <a class="block" href="#">Getting Started</a>
+            <a class="block" href="#">User Guides</a>
             <a class="block" href="#">FAQ</a>
-            <a class="block" href="#">Blog</a>
+            <a class="block" href="#">Tutorials</a>
+            <a class="block" href="#">What’s New</a>
+            <a class="block" href="#">Case Studies</a>
+            <a class="block" href="#">Explore</a>
           </div>
         </details>
 
@@ -44,8 +60,10 @@
           <summary class="flex cursor-pointer list-none items-center justify-between text-sm font-bold text-black">
             Company <span>⌄</span>
           </summary>
-          <div class="mt-4 space-y-3 text-sm text-neutral-600">
+          <div class="mt-4 space-y-3 text-[14px] text-[#444444]">
             <a class="block" href="#">About</a>
+            <a class="block" href="#">Values</a>
+            <a class="block" href="#">Press</a>
             <a class="block" href="#">Careers</a>
             <a class="block" href="#">Contact</a>
           </div>
@@ -54,42 +72,62 @@
     </div>
 
     <!-- Desktop Footer -->
-    <div class="hidden lg:grid lg:grid-cols-[2fr_repeat(4,1fr)] lg:gap-10">
+    <div class="hidden lg:grid lg:grid-cols-[1.6fr_repeat(4,1fr)] lg:gap-16">
       <div>
-        <a href="/" class="text-2xl font-black text-black">Desyne</a>
+        <a href="/" class="flex items-center gap-4">
+
+        <!-- hardcoded the image svg from php to html (as parts/ arent patterns/ & cant be written as a php file) -->
+        <img
+          src="/wp-content/themes/custom-theme/assets/images/Desyne-logo.png"
+          alt="Desyne"
+          class="h-12 w-12 rounded-xl object-contain"
+        >
+          <span class="text-3xl font-black text-black">Desyne</span>
+        </a>
       </div>
 
       <div>
-        <h4 class="mb-5 text-sm font-bold text-black">Products</h4>
-        <div class="space-y-3 text-sm text-neutral-600">
+        <h4 class="mb-6 text-[16px] font-bold text-black">Products</h4>
+        <div class="space-y-4 text-[14px] font-normal text-[#444444]">
           <a class="block" href="#">Photo Editor</a>
           <a class="block" href="#">Collage Maker</a>
           <a class="block" href="#">Graphic Designer</a>
+          <a class="block" href="#">Pricing</a>
+          <a class="block" href="#">Desyne Mobile</a>
         </div>
       </div>
 
       <div>
-        <h4 class="mb-5 text-sm font-bold text-black">Features</h4>
-        <div class="space-y-3 text-sm text-neutral-600">
-          <a class="block" href="#">Templates</a>
+        <h4 class="mb-6 text-[16px] font-bold text-black">Features</h4>
+        <div class="space-y-4 text-[14px] font-normal text-[#444444]">
+          <a class="block" href="#">Photo Effects</a>
+          <a class="block" href="#">Touch Up</a>
+          <a class="block" href="#">Photo to Art</a>
           <a class="block" href="#">BG Remover</a>
-          <a class="block" href="#">Brand Kit</a>
+          <a class="block" href="#">Essential Features</a>
+          <a class="block" href="#">More</a>
         </div>
       </div>
 
       <div>
-        <h4 class="mb-5 text-sm font-bold text-black">Resources</h4>
-        <div class="space-y-3 text-sm text-neutral-600">
-          <a class="block" href="#">Tutorials</a>
+        <h4 class="mb-6 text-[16px] font-bold text-black">Resources</h4>
+        <div class="space-y-4 text-[14px] font-normal text-[#444444]">
+          <a class="block" href="#">Getting Started</a>
+          <a class="block" href="#">User Guides</a>
           <a class="block" href="#">FAQ</a>
-          <a class="block" href="#">Blog</a>
+          <a class="block" href="#">Tutorials</a>
+          <a class="block" href="#">What’s New</a>
+          <a class="block" href="#">Case Studies</a>
+          <a class="block" href="#">Explore</a>
         </div>
       </div>
 
       <div>
-        <h4 class="mb-5 text-sm font-bold text-black">Company</h4>
-        <div class="space-y-3 text-sm text-neutral-600">
+        <h4 class="mb-6 text-[16px] font-bold text-black">Company</h4>
+        <div class="space-y-4 text-[14px] font-normal text-[#444444]">
           <a class="block" href="#">About</a>
+          <a class="block" href="#">Values</a>
+          <a class="block" href="#">Press</a>
           <a class="block" href="#">Careers</a>
           <a class="block" href="#">Contact</a>
         </div>
@@ -97,14 +135,24 @@
     </div>
 
     <!-- Bottom Row -->
-    <div class="mt-10 flex flex-col gap-4 border-t border-black/10 pt-6 text-sm text-neutral-600 md:flex-row md:items-center md:justify-between">
-      <span>English ▼</span>
+    <div class="mt-16 grid items-end gap-4 text-[14px] text-[#444444] lg:grid-cols-[1.6fr_4fr]">
 
-      <div class="flex flex-wrap gap-5">
-        <a href="/terms-conditions">Terms</a>
-        <a href="/privacy-policy">Privacy</a>
-        <a href="#">Accessibility</a>
+      <div>
+        <span>Language : </span>
+        <button type="button" class="inline-flex items-center gap-2 font-semibold text-black">
+          English <span class="text-base leading-none">⌄</span>
+        </button>
       </div>
+
+      <div class="flex flex-wrap items-center gap-2 lg:justify-end">
+        <span class="font-semibold text-black">Cameraxis Private Ltd.</span>
+        <a href="/terms-conditions" class="underline">Terms</a>
+        <span>|</span>
+        <a href="/privacy-policy" class="underline">Privacy Policy</a>
+        <span>|</span>
+        <a href="#" class="underline">Accessibility.</a>
+      </div>
+
     </div>
 
   </div>

@@ -26,10 +26,10 @@ $features = new WP_Query([
 ]);
 ?>
 
-<section class="bg-white py-20 md:py-28">
+<section class="bg-white py-4 md:py-8">
   <div class="mx-auto max-w-7xl px-6">
     <?php if ($features->have_posts()) : ?>
-      <div class="space-y-24 md:space-y-32">
+      <div class="space-y-14 md:space-y-20">
         <?php
         $index = 0;
 
@@ -37,7 +37,22 @@ $features = new WP_Query([
           $features->the_post();
 
           $title = get_field('feature_title');
-          $description = get_field('feature_description');
+
+          $points = [
+            [
+              'title'       => get_field('point_1_title'),
+              'description' => get_field('point_1_description'),
+            ],
+            [
+              'title'       => get_field('point_2_title'),
+              'description' => get_field('point_2_description'),
+            ],
+            [
+              'title'       => get_field('point_3_title'),
+              'description' => get_field('point_3_description'),
+            ],
+          ];
+
           $button_text = get_field('button_text');
           $button_url = get_field('button_url');
           $image = get_field('feature_icon');
@@ -47,6 +62,7 @@ $features = new WP_Query([
         ?>
 
           <div class="grid items-center gap-10 lg:grid-cols-2 lg:gap-20">
+
             <div class="<?php echo $is_reversed ? 'lg:order-2' : 'lg:order-1'; ?>">
               <div class="relative h-[240px] overflow-hidden rounded-3xl bg-neutral-100 shadow-sm md:h-[360px]">
                 <?php if ($image) : ?>
@@ -64,28 +80,45 @@ $features = new WP_Query([
             </div>
 
             <div class="<?php echo $is_reversed ? 'lg:order-1' : 'lg:order-2'; ?>">
-              <div class="max-w-xl">
-                <h2 class="text-3xl font-black leading-tight tracking-tight text-black md:text-4xl">
+              <div class="max-w-xl font-poppins">
+
+                <h2 class="text-[22px] font-bold leading-[1.15] tracking-normal text-black md:text-[26px]">
                   <?php echo esc_html($title ?: get_the_title()); ?>
                 </h2>
 
-                <?php if ($description) : ?>
-                  <p class="mt-5 text-base leading-7 text-neutral-600 md:text-lg">
-                    <?php echo esc_html($description); ?>
-                  </p>
-                <?php endif; ?>
+                <div class="mt-6 space-y-5">
+                  <?php foreach ($points as $point) : ?>
+                    <?php if ($point['title'] || $point['description']) : ?>
+                      <div>
+                        <?php if ($point['title']) : ?>
+                          <h3 class="text-[12px] font-bold leading-[1.2] tracking-normal text-black">
+                            <?php echo esc_html($point['title']); ?>
+                          </h3>
+                        <?php endif; ?>
+
+                        <?php if ($point['description']) : ?>
+                          <p class="mt-2 text-[12px] font-normal leading-[1.5] tracking-normal text-[#444444]">
+                            <?php echo esc_html($point['description']); ?>
+                          </p>
+                        <?php endif; ?>
+                      </div>
+                    <?php endif; ?>
+                  <?php endforeach; ?>
+                </div>
 
                 <?php if ($button_text) : ?>
                   <a
                     href="<?php echo esc_url($button_url ?: '#'); ?>"
-                    class="mt-8 inline-flex rounded-md px-7 py-3 text-sm font-bold text-white"
+                    class="mt-8 inline-flex rounded-md px-7 py-3 text-[12px] font-bold text-white"
                     style="background-color: <?php echo esc_attr($button_color); ?>;"
                   >
                     <?php echo esc_html($button_text); ?>
                   </a>
                 <?php endif; ?>
+
               </div>
             </div>
+
           </div>
 
         <?php

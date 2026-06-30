@@ -31,9 +31,9 @@ $tools = new WP_Query([
 ]);
 ?>
 
-<section class="bg-white py-10 md:py-14">
+<section class="bg-white pt-7 pb-14 md:pt-7 pb-14">
   <div class="mx-auto max-w-7xl px-20">
-    <h2 class="max-w-xl text-2xl font-bold leading-tight tracking-tight text-black md:text-4xl">
+    <h2 class="max-w-xl text-2xl font-semibold leading-tight tracking-tight text-black md:text-4xl">
       Creative tools. Stunning graphics.
     </h2>
 
@@ -42,6 +42,8 @@ $tools = new WP_Query([
         <?php while ($tools->have_posts()) : $tools->the_post(); ?>
           <?php
           $title = get_field('tool_title') ?: get_the_title();
+
+          // $icon not provided entry in Tools CPT as figma left icon vacant
           $icon = get_field('tool_icon');
           ?>
 
@@ -54,7 +56,7 @@ $tools = new WP_Query([
               >
             <?php endif; ?>
 
-            <h3 class="text-sm font-bold text-neutral-700">
+            <h3 class="text-sm font-bold text-neutral-700 pt-20">
               <?php echo esc_html($title); ?>
             </h3>
           </article>

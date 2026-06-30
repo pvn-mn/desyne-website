@@ -24,7 +24,7 @@ $faqs = new WP_Query([
 ]);
 ?>
 
-<section class="bg-white py-16 md:py-24">
+<section class="bg-white py-6 md:py-8">
   <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 md:px-12 lg:grid-cols-[360px_1fr] lg:gap-20 lg:px-20">
     
     <div>
@@ -45,22 +45,33 @@ $faqs = new WP_Query([
         ?>
 
           <article class="py-6">
-            <button
-              type="button"
-              class="flex w-full items-center justify-between gap-6 text-left"
-              @click="open = open === <?php echo esc_attr($index); ?> ? null : <?php echo esc_attr($index); ?>"
-            >
-              <span class="text-base font-bold text-black md:text-lg">
-                <?php echo esc_html($question); ?>
-              </span>
+ <button
+  type="button"
+  class="flex w-full items-center justify-between gap-6 text-left"
+  @click="open = open === <?php echo esc_attr($index); ?> ? null : <?php echo esc_attr($index); ?>"
+>
+  <span class="block flex-1 text-base font-bold text-black md:text-lg">
+    <?php echo esc_html($question); ?>
+  </span>
 
-              <span
-                class="shrink-0 text-xl leading-none text-black transition-transform"
-                :class="{ 'rotate-180': open === <?php echo esc_attr($index); ?> }"
-              >
-               ⌄
-              </span>
-            </button>
+  <span class="flex h-5 w-5 shrink-0 items-center justify-center">
+    <img
+      x-show="open !== <?php echo esc_attr($index); ?>"
+      src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/down_icon.svg'); ?>"
+      alt=""
+      aria-hidden="true"
+      class="h-5 w-5"
+    >
+
+    <img
+      x-show="open === <?php echo esc_attr($index); ?>"
+      src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/up_icon.svg'); ?>"
+      alt=""
+      aria-hidden="true"
+      class="h-5 w-5"
+    >
+  </span>
+</button>
 
             <div
               x-show="open === <?php echo esc_attr($index); ?>"

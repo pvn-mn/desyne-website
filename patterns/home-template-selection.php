@@ -8,99 +8,81 @@
  * Categories: desyne
  */
 
-$templates = new WP_Query([
+$template_selection = new WP_Query([
   'post_type'      => 'screenshot_carousel',
   'post_status'    => 'publish',
-  'posts_per_page' => 12,
-  'meta_key'       => 'display_order',
-  'orderby'        => 'meta_value_num',
-  'order'          => 'ASC',
+  'name'           => 'template-selection',
+  'posts_per_page' => 1,
 ]);
 
 $categories = [
   'Flyers',
-  'Instagram',
+  'IG Posts',
   'Posters',
   'Logos',
-  'Banners',
-  'Stories',
+  'Pintrest',
+  'Twitter',
+  'Pintrest',
+  'Whatsapp',
 ];
 
-$card_classes = [
-  'row-span-2 h-[260px]',
-  'row-span-3 h-[360px]',
-  'row-span-2 h-[260px]',
-  'row-span-4 h-[460px]',
-  'row-span-3 h-[360px]',
-  'row-span-2 h-[260px]',
-  'row-span-4 h-[460px]',
-  'row-span-2 h-[260px]',
-  'row-span-3 h-[360px]',
-  'row-span-2 h-[260px]',
-  'row-span-4 h-[460px]',
-  'row-span-3 h-[360px]',
+$category_classes = [
+  'bg-[#C0DFC7] text-black',
+  'bg-[#C7E7F5] text-black',
+  'bg-[#FFF1A8] text-black',
+  'bg-[#F8BBD0] text-black',
+  'bg-[#C8A27A] text-black',
+  'bg-[#CCEFEB] text-black',
+  'bg-[#E5E5E5] text-black',
+  'bg-[#FFD0A6] text-black',
 ];
 ?>
 
-<section class="relative overflow-hidden bg-white py-20 md:py-28">
+<section class="relative overflow-hidden bg-white py-4 md:py-12">
   <div class="mx-auto max-w-7xl px-6 text-center">
-    <h2 class="mx-auto max-w-2xl text-4xl font-black leading-tight tracking-tight text-black md:text-5xl">
+
+    <h2 class="mx-auto max-w-xl font-poppins text-2xl font-bold text-black md:text-3xl">
       15000+ Templates to provoke your hidden creativity
     </h2>
 
     <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
-      <?php foreach ($categories as $category) : ?>
+      <?php foreach ($categories as $index => $category) : ?>
         <button
           type="button"
-          class="rounded-md bg-neutral-100 px-5 py-2 text-sm font-bold text-neutral-700"
+          class="rounded-md px-5 py-2 text-sm font-bold <?php echo esc_attr($category_classes[$index % count($category_classes)]); ?>"
         >
           <?php echo esc_html($category); ?>
         </button>
       <?php endforeach; ?>
     </div>
 
-    <div class="relative mt-12">
-      <div class="grid auto-rows-[80px] grid-cols-2 gap-4 overflow-hidden md:grid-cols-4 lg:grid-cols-6">
-        <?php if ($templates->have_posts()) : ?>
-          <?php
-          $i = 0;
-          while ($templates->have_posts()) :
-            $templates->the_post();
+    <div class="relative mt-12 overflow-hidden">
+      <?php if ($template_selection->have_posts()) : ?>
+        <?php while ($template_selection->have_posts()) : $template_selection->the_post(); ?>
 
-            $title = get_field('screenshot_title');
-            $image = get_field('screenshot_image');
-            $class = $card_classes[$i % count($card_classes)];
-          ?>
-            <article class="overflow-hidden rounded-xl bg-neutral-100 shadow-lg <?php echo esc_attr($class); ?>">
-              <?php if ($image) : ?>
-                <img
-                  src="<?php echo esc_url($image['url']); ?>"
-                  alt="<?php echo esc_attr($title ?: get_the_title()); ?>"
-                  class="h-full w-full object-cover"
-                >
-              <?php else : ?>
-                <div class="flex h-full w-full items-center justify-center p-4 text-center text-sm font-bold text-neutral-500">
-                  <?php echo esc_html($title ?: get_the_title()); ?>
-                </div>
-              <?php endif; ?>
-            </article>
-          <?php
-            $i++;
-          endwhile;
-          wp_reset_postdata();
-          ?>
-        <?php else : ?>
-          <?php for ($i = 0; $i < 12; $i++) : ?>
-            <article class="rounded-xl bg-neutral-100 shadow-lg <?php echo esc_attr($card_classes[$i % count($card_classes)]); ?>"></article>
-          <?php endfor; ?>
-        <?php endif; ?>
-      </div>
+          <?php if (has_post_thumbnail()) : ?>
+            <?php
+              echo get_the_post_thumbnail(
+                get_the_ID(),
+                'full',
+                [
+                  'class' => 'mx-auto w-full max-w-6xl rounded-xl object-cover',
+                  'alt'   => esc_attr(get_the_title()),
+                ]
+              );
+            ?>
+          <?php endif; ?>
 
-      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
+        <?php endwhile; ?>
+        <?php wp_reset_postdata(); ?>
+      <?php endif; ?>
+
+      <div class="pointer-events-none absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-white via-white/90 to-transparent"></div>
     </div>
 
-    <a href="#" class="relative z-10 mt-10 inline-flex rounded-md bg-[#df3d77] px-7 py-3 text-sm font-bold text-white">
+    <a href="#" class="relative z-10 inline-flex rounded-md bg-[#df3d77] px-7 py-3 text-sm font-bold text-white">
       Explore More Features
     </a>
+
   </div>
 </section>
